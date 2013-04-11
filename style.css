@@ -1,0 +1,91 @@
+/*
+Vefforritun - lokaverkefni - hengimann
+index.html, fetchword.php, hengimann.js, style.css
+Author: Olafur Oskar Egilsson
+Contact: olioskar @ gmail.com
+
+Stílarnir koma nokkurn vegin í þeirri röð sem
+elementin raðast ofanfrá í index.html
+*/
+body {	
+	font-family: Georgia,Verdana,Helvetica;
+	color: #444;
+	text-decoration: none;
+	letter-spacing: 0;
+}
+
+#container {
+	width:336px;
+	margin-top: 25px;
+	margin-left:auto;
+	margin-right:auto;
+}	
+
+#title{
+	font-size:18px;
+	float:none;
+	padding-left:8px;
+	height: 45px;
+	display:none;
+}
+
+#visual {
+	width:319px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#word {
+	padding-left: 3px;
+}
+
+.letter {
+	font-size: 20px;	
+	text-align: center;
+	border-bottom: 2px solid #00aa00;
+	float:left;
+	width: 15px;
+	height: 20px;
+	margin-right:2px;
+}
+
+#keyboard {
+	clear:both;
+	width:330px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top:5px;
+}
+
+button {	
+	width: 28px;
+	height: 28px;
+	margin: 1px;
+}
+
+.disabled {
+	text-decoration: line-through;
+}
+
+#menu {
+	display: none;
+	padding: 10px;
+}
+
+#playAgain {
+	font-size:20px;
+}
+
+#playAgain:hover {
+	font-size:25px;
+	cursor:pointer;
+}
+
+.mitem {
+	font-size:15px
+}
+
+.mitem:hover {
+	font-size: 20px;
+	cursor:pointer;
+}

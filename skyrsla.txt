@@ -1,0 +1,47 @@
+Vefforritun
+Verkefni 7 (lokaverkefni)
+Nemandi: Ólafur Óskar Egilsson | olioskar @ gmail.com
+Kennari: Ívar Björn Hilmarsson
+
+Skýrsla
+-------
+Hengimann
+Útfærsla í html, javascript og php á hinum klassíska leik Hangman.
+
+
+Yfirlit yfir skrár:
+-------------------
+index.html & style.css
+Sjá einungis um uppbyggingu og útlitstillingar. Síðan fylgir w3 stöðlum	(XHTML 1.0 Strict).
+
+hengimann.js
+Sér um alla virkni leiksins.
+	
+fetchword.php
+Sér um samskipti við gagnagrunn og að setja þær upplýsingar á form sem hengimann.js skilur (á JSON strengjaformi)
+
+hengimann.js og fetchword.php eru ágætlega skjöluð og ættu að vera auðskiljanleg. Athugasemdir eru á íslensku, allar breytur og föll eru á ensku.
+
+/db/ordadb.db
+Gagnagrunnur sem geymir eitthvað um 250000 íslensk orð
+
+/img/*.png
+Myndir sem sýna stöðu notanda í leiknum
+
+
+Uppfylling á kröfum kennara:
+----------------------------
+Verkefnið uppfyllir allar þær kröfur sem settar voru fram. Hér að neðan er fjallað um þær.
+
+Notandi hefur 4 mismunandi möguleika í upphafsvalmynd til að hefja leikinn (sjá hengimann.js->makeMenu()). Þessir möguleikar nota GET færibreytur til að sækja orð af mismunandi lengd frá gagnasafni með því að framkvæma AJAX fyrirspurnir á fetchword.php (sjá hengimann.js->startGame()).
+
+Leikurinn er forritaður í javascript og nýtir einnig jquery.js til að auðvelda útfærslu á gagnvirkni. Átt er við html tög og aðrar upplýsingar dínamískt. Element eru búin til "on the fly" og þau sýnd, falin eða eytt. T.d má nefna lyklaborðið, virkni á upphafsvalmynd, og uppfærslu á stöðu leiks (sjá hengimann.js -> makeMenu(), makeKeyboard(), showWord(), animateWord og gameOver() svo eitthvað sé nefnt)
+
+fetchword.php framkvæmir mismunandi fyrirspurnir við gagnagrunn eftir því hvað GET breytur innihalda. 
+Dæmi um notkun: fetchword.php?random&min=5&max=10
+þessi skipun skilar JSON streng sem inniheldur upplýsingar um orð með stafafjölda á bilinu 5 til 10. JSON strengurinn inniheldur orðið sjálft (word), lengd (length) og fylki með stöfum orðsins (letters).
+
+Sé GET fyrirspurnin ekki samkvæmt notkunarskilyrðum þá skilar fetchword.php villumeldingu. Einnig þá höndlar hengimann.js villur sem koma ef ekki tekst að sækja json streng.
+
+Sé eitthvað sem gleymist að nefna hér þá minni ég á að kóðinn er vel skjalaður og auðlesanlegur.
+:w
